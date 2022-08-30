@@ -7,6 +7,12 @@ import "os/exec"
 
 // Alert displays a desktop notification and plays a default system sound.
 func Alert(title, message, appIcon string) error {
+	tn, err := exec.LookPath("terminal-notifier")
+	if err == nil {
+		cmd := exec.Command(tn, "-title", title, "-message", message, "-sound", "default")
+		return cmd.Run()
+	}
+
 	osa, err := exec.LookPath("osascript")
 	if err != nil {
 		return err
