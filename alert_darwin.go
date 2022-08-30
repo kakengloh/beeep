@@ -9,7 +9,7 @@ import "os/exec"
 func Alert(title, message, appIcon string) error {
 	tn, err := exec.LookPath("terminal-notifier")
 	if err == nil {
-		cmd := exec.Command(tn, "-title", title, "-message", message, "-sound", "default")
+		cmd := exec.Command(tn, "-title", title, "-message", message, "-sound", "default", "-appIcon", appIcon)
 		return cmd.Run()
 	}
 
