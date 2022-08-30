@@ -10,3 +10,5 @@ require (
 )
 
 require github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d // indirect
+
+replace github.com/gen2brain/beeep => github.com/kakengloh/beeep v0.0.0-20220830154255-2dae6ebd7dae
